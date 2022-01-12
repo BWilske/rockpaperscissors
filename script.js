@@ -7,7 +7,7 @@ if (userObject == "rock" || userObject == "scissors" || userObject == "paper"){
 else getUserObject()
 }
 
-// if else conditionsals to evaluate the winner
+// if else conditionals to evaluate the winner
 function evalutateWinner() {
     let userObject = getUserObject()
     let computerObject = computerPick()
