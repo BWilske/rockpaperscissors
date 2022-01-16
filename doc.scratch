@@ -1,0 +1,8 @@
+if (yourWins > computerWins){
+    console.log (`You won the game :)
+Your wins: ${yourWins}   Computer wins: ${computerWins}`)
+}
+else if (yourWins < computerWins){
+    console.log (`You  lost the game :(
+Your wins: ${yourWins}   Computer wins: ${computerWins}`)
+}

@@ -5,9 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <div id="gameboard">
+        <div id="leftscoreboard" class="column">
+            <div class="buttonholder"><button class="inputbutton" id="rockbutton">Rock</button></div>
+            <div class="buttonholder"><button class="inputbutton" id="paperbutton">Paper</button></div>
+            <div class="buttonholder"><button class="inputbutton" id="scissorsbutton">Scissors</button></div>
+        </div>
+        <div id="centerscoreboard" class="column">
+            <div class="midcontent"><H2>MAN<H2></div>
+            <div class="midcontent"></div>
+            <div class="midcontent"><H2>VS</H2></div>
+            <div class="midcontent"></div>
+            <div class="midcontent"><h2>MACHINE</h2></div>
+        </div>
+        <div id=rightscoreboard class="column">
+            <div id=winorlost><h3>Select A Button to play</h3></div>
+            <div class="scoreholder">
+                <div class="abovescoretext"><h4>Puny Human</h4></div>
+                <div class="abovescoretext"><h4>Glorious Machine</h4></div>
+            </div>
+            <div class="scoreholder">
+                <div id="yourscore"><h5>10</h5></div>
+                <div id="compscore"><h5>10</h5></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

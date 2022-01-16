@@ -1,72 +1,45 @@
 let yourWins = 0
 let computerWins = 0
-// begin program
-while (yourWins < 5 && computerWins < 5) {
-    play()
-}
-if (yourWins > computerWins){
-    console.log (`You won the game :)
-Your wins: ${yourWins}   Computer wins: ${computerWins}`)
-}
-else if (yourWins < computerWins){
-    console.log (`You  lost the game :(
-Your wins: ${yourWins}   Computer wins: ${computerWins}`)
-}
-//end program
 
-//mashes functions together
-function play(){
-    evalutateWinner(getUserObject(), computerPlay())
-}
-
- //computer picks an object
- function computerPlay(){
+// evaluate the winner, I feel dumb as shit because there has to be an easier way of doing this, maybe objects when i learn those
+function evalutateWinner(userSelection) {
+    //computer picks an object
     let objectArray =["rock", "paper", "scissors"]
     let computerObject = objectArray[Math.floor(Math.random()* 3)]
-    return computerObject
-}
-// grabs user input
-function getUserObject(){
-    let userObject = window.prompt("what fighter would you like?")
-    userObject.toLowerCase()
-if (userObject === "rock" || userObject === "scissors" || userObject === "paper"){
-    return userObject;
-}
-else if (!userObject) {
-    return
-}
-else getUserObject()
-}
-
-// if else conditionals to evaluate the winner
-function evalutateWinner(userObject, computerObject) {
-    console.log( `you picked ${userObject}, computer picked ${computerObject}`)
     
-    if (userObject === computerObject){
+    console.log( `you picked ${userSelection}, computer picked ${computerObject}`)
+    
+    if (userSelection === computerObject){
         console.log(`you tied, Your wins: ${yourWins}   Computer wins: ${computerWins}`) 
     }
-    else if (userObject === "scissors" && computerObject === "rock") {
+    else if (userSelection === "scissors" && computerObject === "rock") {
         computerWins+=1
         console.log(`you lose, Your wins: ${yourWins}   Computer wins: ${computerWins}`) 
     }
-    else if (userObject === "rock"  && computerObject === "paper"){
+    else if (userSelection === "rock"  && computerObject === "paper"){
         computerWins+=1
         console.log(`you lose, Your wins: ${yourWins}   Computer wins: ${computerWins}`) 
     }
-    else if (userObject === "paper"  && computerObject === "scissors") {
+    else if (userSelection === "paper"  && computerObject === "scissors") {
         computerWins+=1
         console.log(`you lose, Your wins: ${yourWins}   Computer wins: ${computerWins}`) 
     }
-    else if (userObject === "scissors" && computerObject === "paper"){
+    else if (userSelection === "scissors" && computerObject === "paper"){
         yourWins+=1
         console.log(`you win, Your wins: ${yourWins}   Computer wins: ${computerWins}`) 
     }
-    else if (userObject === "rock" && computerObject === "scissors"){
+    else if (userSelection === "rock" && computerObject === "scissors"){
         yourWins+=1
         console.log(`you win, Your wins: ${yourWins}   Computer wins: ${computerWins}`) 
     }
-    else if (userObject === "paper" && computerObject === "rock") {
+    else if (userSelection === "paper" && computerObject === "rock") {
         yourWins+=1
         console.log(`you win, Your wins: ${yourWins}   Computer wins: ${computerWins}`) 
     }
 }
+
+//event listens for buttons and such
+
+let rockEl = document.getElementById("rockbutton").addEventListener("click", () => evalutateWinner("rock"))
+let paperEl= document.getElementById("paperbutton").addEventListener("click", () => evalutateWinner("paper"))
+let scissorsEl= document.getElementById("scissorsbutton").addEventListener("click", () => evalutateWinner("scissors"))
